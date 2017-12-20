@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_common" android:icon="@drawable/ic_menu_default" android:title="공통" />
+        <item android:id="@+id/nav_common1"  android:title="    공지사항" />
+        <item android:id="@+id/nav_common2"  android:title="    사람찾기" />
+        <item android:id="@+id/nav_common3"  android:title="    무재해현황판" />
+        <item android:id="@+id/nav_common4"  android:title="    월중행사계획표" />
+
+        <item android:id="@+id/nav_safe" android:icon="@drawable/ic_menu_default" android:title="안전" />
+        <item android:id="@+id/nav_safe1"  android:title="    작업기준" />
+        <item android:id="@+id/nav_safe2"  android:title="    안전점검" />
+
+        <item android:id="@+id/nav_mate" android:icon="@drawable/ic_menu_default" android:title="자재" />
+        <item android:id="@+id/nav_mate1"  android:title="   자재불출관리" />
+        <item android:id="@+id/nav_mate2"  android:title="   자재입출고현황" />
+        <item android:id="@+id/nav_mate3"  android:title="   자재불출현황" />
+        <item android:id="@+id/nav_mate4"  android:title="   정산현황" />
+
+        <item android:id="@+id/nav_gear" android:icon="@drawable/ic_menu_default" android:title="정비" />
+        <item android:id="@+id/nav_gear1"  android:title="    작업자위치" />
+        <item android:id="@+id/nav_gear2"  android:title="    W/O정보" />
+        <item android:id="@+id/nav_gear3"  android:title="    생산관리" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nav_log_out" android:icon="@drawable/ic_menu_default"
+                android:title="로그아웃" />
+        </menu>
+    </item>
+
+</menu>

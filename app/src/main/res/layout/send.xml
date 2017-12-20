@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include
+        android:id="@id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/inc_top"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:layout_below="@+id/layout_top"
+           android:layout_alignParentStart="true">
+
+        <!-- 수신자목록 -->
+        <LinearLayout
+        android:id="@id/linearLayout1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <!-- title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:background="@color/title_bg"
+            >
+            <ImageView
+                android:id="@id/imageView1"
+                android:layout_width="28.0dip"
+                android:layout_height="28.0dip"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_top_search"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="28.0dip"
+                android:layout_height="28.0dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_person_black_24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/imageView1"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="수신자 목록"
+                />
+        </RelativeLayout>
+        <!-- 라인 -->
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            />
+        </LinearLayout>
+           <ListView
+               android:id="@id/listView1"
+               android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:background="@drawable/border_bottom_l"
+               android:orientation="vertical">
+           </ListView>
+
+        <!-- 수신자추가 -->
+        <LinearLayout
+            android:id="@id/linearLayout1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <!-- title -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:background="@color/title_bg"
+                >
+                <ImageView
+                    android:id="@id/imageView1"
+                    android:layout_width="28.0dip"
+                    android:layout_height="28.0dip"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_top_search"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="28.0dip"
+                    android:layout_height="28.0dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_person_add_black_24dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/imageView1"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="수신자 추가"
+                    />
+            </RelativeLayout>
+            <!-- 라인 -->
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                />
+           </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_bottom_l"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border_bottom_l"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"
+                >
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="2.0"
+                    android:spinnerMode="dialog"
+                    />
+
+                <!-- 조회버튼 -->
+                <LinearLayout
+                    android:background="@drawable/box_line_blue"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1.0"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    >
+                    <TextView android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue2"
+                        android:gravity="center"
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="추가" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

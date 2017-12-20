@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_top"
+        android:layout_marginBottom="5dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/border_bottom_item"
+            android:paddingRight="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/font_333"
+                android:textStyle="bold"
+                android:text="제목이 보여집니다"
+                android:id="@+id/textView1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="220dp"
+                android:layout_alignParentStart="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/border_bottom">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:text="홍길동"
+                android:textColor="@color/font_333"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="6dp"
+                android:layout_toEndOf="@+id/textView3"
+                android:ellipsize="end"
+                android:gravity="center|right"
+                android:maxLines="1"
+                android:maxWidth="150dp"
+                android:text="2017-02-20 16:00:0.0"
+                android:textColor="@color/font_333"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
