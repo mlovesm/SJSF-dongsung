@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.creative.dongsung.app.R;
 import com.creative.dongsung.app.fragment.FragMenuActivity;
-import com.creative.dongsung.app.government.PeoplesCardDialogActivity;
 import com.creative.dongsung.app.retrofit.Datas;
 import com.creative.dongsung.app.retrofit.RetrofitService;
 import com.creative.dongsung.app.util.SettingPreference;
@@ -42,7 +41,6 @@ public class MainFragment extends Fragment {
 //    adb shell dumpsys activity activities | findstr "Run"
     private static final String TAG = "MainFragment";
     public static String ipAddress= "http://119.202.60.108:8585";
-//    public static String ipAddress= "http://59.11.9.94:9090";
 //    public static String ipAddress= "http://192.168.0.22:9191";
     public static String contextPath= "/sjsf_dongsung";
     private ProgressDialog pDlalog = null;
@@ -53,7 +51,6 @@ public class MainFragment extends Fragment {
     public static boolean onAppCheck= false;
     public static String pendingPath= "";
     public static String pendingPathKey= "";
-    private Activity mActivity;
 
     private PermissionListener permissionlistener;
 
@@ -65,30 +62,6 @@ public class MainFragment extends Fragment {
     public static String part1_cd;
     public static String part2_cd;
     public static String latestAppVer;
-
-    @Override public void onAttach(Context context) {
-        //This method avoid to call super.onAttach(context) if I'm not using api 23 or more
-        if (Build.VERSION.SDK_INT >= 23) {
-            super.onAttach(context);
-            onAttachToContext(context);
-        }
-    }
-
-    /*
-     * Deprecated on API 23
-     * Use onAttachToContext instead
-     */
-    @SuppressWarnings("deprecation")
-    @Override public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        if (Build.VERSION.SDK_INT < 23) {
-            onAttachToContext(activity);
-        }
-    }
-
-    protected void onAttachToContext(Context context) {
-        this.mActivity = (Activity) context;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

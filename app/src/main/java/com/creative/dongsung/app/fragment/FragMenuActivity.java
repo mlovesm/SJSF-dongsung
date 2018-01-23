@@ -21,6 +21,7 @@ import com.creative.dongsung.app.board.NoticeBoardFragment;
 import com.creative.dongsung.app.common.MonthlyFragment;
 import com.creative.dongsung.app.equip.WorkOrderFragment;
 import com.creative.dongsung.app.equip.WorkerPositionFragment;
+import com.creative.dongsung.app.government.PeoplesCardDialogActivity;
 import com.creative.dongsung.app.government.PersonnelFragment;
 import com.creative.dongsung.app.material.MaterialMainFragment;
 import com.creative.dongsung.app.material.MaterialWriteFragment;
@@ -261,14 +262,23 @@ public class FragMenuActivity extends AppCompatActivity implements NavigationVie
             intent.putExtra("title", "공지사항");
 
         } else if (id == R.id.nav_common2) {
-            intent = new Intent(getApplicationContext(),FragMenuActivity.class);
-            intent.putExtra("title", "사람찾기");
+            intent = new Intent(getApplicationContext(), PeoplesCardDialogActivity.class);
+            intent.putExtra("sabun_no", MainFragment.loginSabun);
+            startActivity(intent);
+
+            drawer.closeDrawer(GravityCompat.START);
+
+            return false;
 
         } else if (id == R.id.nav_common3) {
             intent = new Intent(getApplicationContext(),FragMenuActivity.class);
-            intent.putExtra("title", "무재해현황판");
+            intent.putExtra("title", "사람찾기");
 
         } else if (id == R.id.nav_common4) {
+            intent = new Intent(getApplicationContext(),FragMenuActivity.class);
+            intent.putExtra("title", "무재해현황판");
+
+        } else if (id == R.id.nav_common5) {
             intent = new Intent(getApplicationContext(),FragMenuActivity.class);
             intent.putExtra("title", "월중행사계획표");
 

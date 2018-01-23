@@ -54,6 +54,9 @@ public interface RetrofitService {
     @GET("{title}/{sub}/{path}/{path2}/{path3}")
     Call<Datas> listData(@Path("title") String title, @Path("sub") String sub, @Path("path") String path, @Path("path2") String path2, @Path(value = "path3", encoded = true) String path3);
 
+    @GET("{title}/{sub}/{path}/{path2}")
+    Call<Datas> listDataQ(@Path("title") String title, @Path("sub") String sub, @Path("path") String path, @Path("path2") String path2, @Query("param") String param);
+
     @FormUrlEncoded
     @POST("{title}/{sub}")
     Call<Datas> insertData(@Path("title") String title, @Path("sub") String sub, @FieldMap Map<String, Object> fields);

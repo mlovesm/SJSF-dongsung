@@ -163,21 +163,20 @@
                 android:textColor="@color/font_333"
                 android:text="휴대폰"
                 />
+
             <EditText
                 android:id="@+id/editText1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_margin="4dp"
                 android:layout_weight="2"
                 android:background="@drawable/box_line_blue"
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:inputType="phone"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text="010-1234-5678"
                 android:paddingLeft="10dp"
-                android:layout_margin="4dp"
-                />
+                android:textColor="@color/black"
+                android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -205,17 +204,15 @@
                 android:id="@+id/editText2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_margin="4dp"
                 android:layout_weight="2"
                 android:background="@drawable/box_line_blue"
                 android:ems="20"
                 android:gravity="center_vertical"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text="asdfgf@naver.com"
                 android:paddingLeft="10dp"
-                android:layout_margin="4dp"
-                />
+                android:textColor="@color/black"
+                android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -250,10 +247,44 @@
                 android:gravity="center_vertical"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:text="경기도 수원시 영통군 광교로 123-1, 경기중소기업센터본관 502호"
                 android:paddingLeft="10dp"
                 android:layout_margin="4dp"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/border_bottom_l"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.03"
+                android:background="@color/gary_light"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="비밀번호"
+                android:textColor="@color/font_333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="2"
+                android:background="@drawable/box_line_blue"
+                android:ems="20"
+                android:gravity="center_vertical"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 

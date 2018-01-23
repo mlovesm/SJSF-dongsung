@@ -78,7 +78,7 @@ public class PersonnelAdapter extends BaseAdapter{
 //		Bitmap bmp1 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 		Glide.with(con).load(byteArray)
 				.asBitmap()
-				.transform(new CropCircleTransformation(new CustomBitmapPool()))
+//				.transform(new CropCircleTransformation(new CustomBitmapPool()))
 				.error(R.drawable.no_img)
 //				.signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
 				.into(viewHolder.people_image);

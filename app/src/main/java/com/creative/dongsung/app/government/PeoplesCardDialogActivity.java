@@ -14,6 +14,7 @@ import com.creative.dongsung.app.R;
 import com.creative.dongsung.app.menu.MainFragment;
 import com.creative.dongsung.app.retrofit.Datas;
 import com.creative.dongsung.app.retrofit.RetrofitService;
+import com.creative.dongsung.app.util.SettingPreference;
 import com.creative.dongsung.app.util.UtilClass;
 
 import java.util.HashMap;
@@ -28,6 +29,7 @@ import retrofit2.Response;
 
 public class PeoplesCardDialogActivity extends Activity {
     private static final String TAG = "PeoplesCardDialogActivity";
+    private SettingPreference pref = new SettingPreference("loginData",this);
     private RetrofitService service;
 
     @Bind(R.id.textView1) TextView tv_data1;
@@ -37,8 +39,10 @@ public class PeoplesCardDialogActivity extends Activity {
     @Bind(R.id.editText1) EditText et_data1;
     @Bind(R.id.editText2) EditText et_data2;
     @Bind(R.id.editText3) EditText et_data3;
+    @Bind(R.id.editText4) EditText et_data4;
 
     private String sabunNo;
+    private String userPwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +54,7 @@ public class PeoplesCardDialogActivity extends Activity {
 
         try {
             sabunNo= getIntent().getStringExtra("sabun_no");
-            UtilClass.logD(TAG, sabunNo);
+            userPwd= pref.getValue("user_pw", "");
 
             getPersonnelSabunData();
 
@@ -82,6 +86,7 @@ public class PeoplesCardDialogActivity extends Activity {
                                 et_data1.setText(response.body().getList().get(0).get("user_cell"));
                                 et_data2.setText(response.body().getList().get(0).get("user_email"));
                                 et_data3.setText(response.body().getList().get(0).get("user_addr"));
+                                et_data4.setText(userPwd);
                             }else{
                                 tv_data1.setText("");
                                 tv_data2.setText("");
@@ -90,6 +95,7 @@ public class PeoplesCardDialogActivity extends Activity {
                                 et_data1.setText("");
                                 et_data2.setText("");
                                 et_data3.setText("");
+                                et_data4.setText("");
                             }
 
                         }
@@ -158,6 +164,7 @@ public class PeoplesCardDialogActivity extends Activity {
         String et_cell = et_data1.getText().toString();
         String et_email = et_data2.getText().toString();
         String et_addr = et_data3.getText().toString();
+        String et_pwd = et_data4.getText().toString();
 
         if (tv_data1.getText().equals("") || tv_data1.length()==0) {
             Toast.makeText(getApplicationContext(), "인사정보가 없습니다.",Toast.LENGTH_LONG).show();
@@ -168,12 +175,17 @@ public class PeoplesCardDialogActivity extends Activity {
             Toast.makeText(getApplicationContext(), "빈칸을 채워주세요.",Toast.LENGTH_LONG).show();
             return;
         }
+        if (et_pwd.equals("") || et_pwd.length()<4) {
+            Toast.makeText(getApplicationContext(), "비밀번호를 4자리 이상 입력해주세요.",Toast.LENGTH_LONG).show();
+            return;
+        }
 
         Map<String, Object> map = new HashMap();
         map.put("sabunNo", sabunNo);
         map.put("user_cell",et_cell.trim());
         map.put("user_email",et_email.trim());
         map.put("user_addr",et_addr);
+        map.put("user_pwd",et_pwd);
 
         final ProgressDialog pDlalog = new ProgressDialog(PeoplesCardDialogActivity.this);
         UtilClass.showProcessingDialog(pDlalog);
@@ -213,6 +225,7 @@ public class PeoplesCardDialogActivity extends Activity {
             String status= response.body().getStatus();
             if(status.equals("success")){
                 Toast.makeText(getApplicationContext(), "수정 하였습니다.", Toast.LENGTH_SHORT).show();
+                pref.put("user_pw", et_data4.getText().toString());
                 finish();
             }else{
                 Toast.makeText(getApplicationContext(), "수정에 실패하였습니다.", Toast.LENGTH_SHORT).show();

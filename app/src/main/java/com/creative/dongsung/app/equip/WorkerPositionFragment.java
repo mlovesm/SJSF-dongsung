@@ -2,6 +2,7 @@ package com.creative.dongsung.app.equip;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,8 +10,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +36,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.creative.dongsung.app.R.id.et_search;
+
 public class WorkerPositionFragment extends Fragment {
     private static final String TAG = "WorkerPositionFragment";
     private RetrofitService service;
@@ -44,6 +49,8 @@ public class WorkerPositionFragment extends Fragment {
     @Bind(R.id.top_title) TextView textTitle;
     @Bind(R.id.textButton1) TextView tv_button1;
     @Bind(R.id.textButton2) TextView tv_button2;
+
+    @Bind(R.id.editText1) EditText et_search;
 
     private boolean isSdate=false;
 
@@ -72,7 +79,7 @@ public class WorkerPositionFragment extends Fragment {
         final ProgressDialog pDlalog = new ProgressDialog(getActivity());
         UtilClass.showProcessingDialog(pDlalog);
 
-        Call<Datas> call = service.listData("Equip","workersPositionList",tv_button1.getText().toString(), tv_button2.getText().toString());
+        Call<Datas> call = service.listDataQ("Equip","workersPositionList",tv_button1.getText().toString(), tv_button2.getText().toString(), et_search.getText().toString());
         call.enqueue(new Callback<Datas>() {
             @Override
             public void onResponse(Call<Datas> call, Response<Datas> response) {
@@ -134,6 +141,21 @@ public class WorkerPositionFragment extends Fragment {
         fragmentTransaction.replace(R.id.fragmentReplace, frag);
         fragmentTransaction.addToBackStack(title+"작성");
         fragmentTransaction.commit();
+    }
+
+    //해당 검색값 데이터 조회
+    @OnClick(R.id.imageView1)
+    public void onSearchColumn() {
+        //검색하면 키보드 내리기
+        InputMethodManager imm= (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(et_search.getWindowToken(), 0);
+
+        if(et_search.getText().toString().length()==0){
+            Toast.makeText(getActivity(), "작업자를 입력하세요.", Toast.LENGTH_SHORT).show();
+        }else{
+            async_progress_dialog();
+        }
+
     }
 
     //날짜설정

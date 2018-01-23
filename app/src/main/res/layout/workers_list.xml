@@ -2,11 +2,60 @@
 <RelativeLayout android:orientation="vertical" android:background="@color/gary_bg" android:layout_width="match_parent" android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <LinearLayout
+        android:id="@+id/param_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/layout_top"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/linearLayout3"
+                android:layout_weight="0.53"
+                android:hint="작업자를 입력하세요."
+                android:singleLine="true"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/box_basic">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="28.0dip"
+                    android:layout_height="28.0dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_top_search" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/search_top"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/layout_top"
+        android:layout_below="@id/param_search"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
