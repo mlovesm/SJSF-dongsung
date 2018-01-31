@@ -95,7 +95,7 @@ public class BoardAdapter extends BaseAdapter{
 		if(name.equals("NoticeBoard")){
 			viewHolder.board_data1.setText(boardList.get(position).get("data1").toString());
 			viewHolder.board_data3.setText(boardList.get(position).get("data3").toString());
-			viewHolder.board_data4.setText(boardList.get(position).get("data4").toString());
+			viewHolder.board_data4.setText(boardList.get(position).get("dataR1").toString());
 
 		}else if(name.equals("Workers")){
 			viewHolder.board_data1.setText(boardList.get(position).get("data1").toString());
@@ -106,14 +106,14 @@ public class BoardAdapter extends BaseAdapter{
 			viewHolder.board_data1.setText(boardList.get(position).get("data1").toString());
 			viewHolder.board_data2.setText(boardList.get(position).get("data2").toString());
 			viewHolder.board_data3.setText(boardList.get(position).get("data3").toString());
-			viewHolder.board_data4.setText(boardList.get(position).get("data4").toString());
-			viewHolder.board_data5.setText(boardList.get(position).get("data5").toString());
+			viewHolder.board_data4.setText(boardList.get(position).get("dataR1").toString());
+			viewHolder.board_data5.setText(boardList.get(position).get("dataR2").toString());
 
 		}else{
 			viewHolder.board_data1.setText(boardList.get(position).get("data1").toString());
 			viewHolder.board_data2.setText(boardList.get(position).get("data2").toString());
 			viewHolder.board_data3.setText(boardList.get(position).get("data3").toString());
-			viewHolder.board_data4.setText(boardList.get(position).get("data4").toString());
+			viewHolder.board_data4.setText(boardList.get(position).get("dataR1").toString());
 		}
 
 		return v;

@@ -11,13 +11,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.creative.dongsung.app.R;
-import com.creative.dongsung.app.util.CustomBitmapPool;
 import com.creative.dongsung.app.util.UtilClass;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 
 public class PersonnelAdapter extends BaseAdapter{
@@ -60,13 +57,13 @@ public class PersonnelAdapter extends BaseAdapter{
 			v = inflater.inflate(R.layout.people_list_item, parent,false);
 			viewHolder.people_image = (ImageView) v.findViewById(R.id.imageView1);
 			viewHolder.people_name = (TextView)v.findViewById(R.id.textView1);
-			viewHolder.data2 = (TextView)v.findViewById(R.id.textView2);
-			viewHolder.data3 = (TextView)v.findViewById(R.id.textView3);
-			viewHolder.data4 = (TextView)v.findViewById(R.id.textView4);
-			viewHolder.data5 = (TextView)v.findViewById(R.id.textView5);
-			viewHolder.data6 = (TextView)v.findViewById(R.id.textView6);
-			viewHolder.data7 = (TextView)v.findViewById(R.id.textView7);
-			viewHolder.data8 = (TextView)v.findViewById(R.id.textView8);
+			viewHolder.dataL1 = (TextView)v.findViewById(R.id.textView2);
+			viewHolder.dataL2 = (TextView)v.findViewById(R.id.textView3);
+			viewHolder.dataR1 = (TextView)v.findViewById(R.id.textView4);
+			viewHolder.dataR2 = (TextView)v.findViewById(R.id.textView5);
+			viewHolder.dataR3 = (TextView)v.findViewById(R.id.textView6);
+			viewHolder.dataR4 = (TextView)v.findViewById(R.id.textView7);
+			viewHolder.dataR5 = (TextView)v.findViewById(R.id.textView8);
 
 			v.setTag(viewHolder);
 
@@ -84,23 +81,15 @@ public class PersonnelAdapter extends BaseAdapter{
 				.into(viewHolder.people_image);
 
 		viewHolder.people_name.setText(peopleList.get(position).get("user_nm").toString());
-		String user_cell= peopleList.get(position).get("user_cell").toString();
 
-			String work_nm= peopleList.get(position).get("dept_nm2").toString().trim();
-			if(work_nm.equals("")||work_nm==null||work_nm.equals(".")){
-				work_nm="";
-			}else{
-				work_nm= "("+ work_nm +")";
-			}
-			viewHolder.data3.setText(peopleList.get(position).get("user_no").toString());
+		viewHolder.dataL1.setText(peopleList.get(position).get("L1").toString());
+		viewHolder.dataL2.setText(peopleList.get(position).get("L2").toString());
 
-		viewHolder.data2.setText(peopleList.get(position).get("j_pos").toString());
-
-		viewHolder.data4.setText(peopleList.get(position).get("dept_nm1").toString().trim()+work_nm);
-		viewHolder.data5.setText(peopleList.get(position).get("work_nm").toString());
-		viewHolder.data6.setText(user_cell);
-		viewHolder.data7.setText(peopleList.get(position).get("user_email").toString());
-		viewHolder.data8.setText(peopleList.get(position).get("user_addr").toString());
+		viewHolder.dataR1.setText(peopleList.get(position).get("R1").toString().trim());
+		viewHolder.dataR2.setText(peopleList.get(position).get("R2").toString());
+		viewHolder.dataR3.setText(peopleList.get(position).get("R3").toString());
+		viewHolder.dataR4.setText(peopleList.get(position).get("R4").toString());
+		viewHolder.dataR5.setText(peopleList.get(position).get("R5").toString());
 
 		return v;
 	}
@@ -121,13 +110,13 @@ public class PersonnelAdapter extends BaseAdapter{
 	class ViewHolder{
 		ImageView people_image;
 		TextView people_name;
-		TextView data2;
-		TextView data3;
-		TextView data4;
-		TextView data5;
-		TextView data6;
-		TextView data7;
-		TextView data8;
+		TextView dataL1;
+		TextView dataL2;
+		TextView dataR1;
+		TextView dataR2;
+		TextView dataR3;
+		TextView dataR4;
+		TextView dataR5;
 
 	}
 

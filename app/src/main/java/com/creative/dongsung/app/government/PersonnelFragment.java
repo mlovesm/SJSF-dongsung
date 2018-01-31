@@ -184,16 +184,15 @@ public class PersonnelFragment extends Fragment {
                             peopleListArray.clear();
                             for(int i=0; i<response.body().getList().size();i++){
                                 HashMap<String,String> hashMap = new HashMap<>();
-                                hashMap.put("user_no",response.body().getList().get(i).get("user_no"));
                                 hashMap.put("user_nm",response.body().getList().get(i).get("user_nm"));
-                                hashMap.put("user_cell",response.body().getList().get(i).get("user_cell"));
                                 hashMap.put("user_pic",response.body().getList().get(i).get("user_pic"));
-                                hashMap.put("dept_nm1",response.body().getList().get(i).get("dept_nm1"));
-                                hashMap.put("dept_nm2",response.body().getList().get(i).get("dept_nm2"));
-                                hashMap.put("work_nm",response.body().getList().get(i).get("work_nm"));
-                                hashMap.put("j_pos",response.body().getList().get(i).get("j_pos"));
-                                hashMap.put("user_addr",response.body().getList().get(i).get("user_addr"));
-                                hashMap.put("user_email",response.body().getList().get(i).get("user_email"));
+                                hashMap.put("L1",response.body().getList().get(i).get("L1"));
+                                hashMap.put("L2",response.body().getList().get(i).get("L2"));
+                                hashMap.put("R1",response.body().getList().get(i).get("R1"));
+                                hashMap.put("R2",response.body().getList().get(i).get("R2"));
+                                hashMap.put("R3",response.body().getList().get(i).get("R3"));
+                                hashMap.put("R4",response.body().getList().get(i).get("R4"));
+                                hashMap.put("R5",response.body().getList().get(i).get("R5"));
                                 peopleListArray.add(hashMap);
                             }
 
@@ -203,16 +202,15 @@ public class PersonnelFragment extends Fragment {
                         }else{
                             for(int i=0; i<response.body().getList().size();i++){
                                 HashMap<String,String> hashMap = new HashMap<>();
-                                hashMap.put("user_no",response.body().getList().get(i).get("user_no"));
                                 hashMap.put("user_nm",response.body().getList().get(i).get("user_nm"));
-                                hashMap.put("user_cell",response.body().getList().get(i).get("user_cell"));
                                 hashMap.put("user_pic",response.body().getList().get(i).get("user_pic"));
-                                hashMap.put("dept_nm1",response.body().getList().get(i).get("dept_nm1"));
-                                hashMap.put("dept_nm2",response.body().getList().get(i).get("dept_nm2"));
-                                hashMap.put("work_nm",response.body().getList().get(i).get("work_nm"));
-                                hashMap.put("j_pos",response.body().getList().get(i).get("j_pos"));
-                                hashMap.put("user_addr",response.body().getList().get(i).get("user_addr"));
-                                hashMap.put("user_email",response.body().getList().get(i).get("user_email"));
+                                hashMap.put("L1",response.body().getList().get(i).get("L1"));
+                                hashMap.put("L2",response.body().getList().get(i).get("L2"));
+                                hashMap.put("R1",response.body().getList().get(i).get("R1"));
+                                hashMap.put("R2",response.body().getList().get(i).get("R2"));
+                                hashMap.put("R3",response.body().getList().get(i).get("R3"));
+                                hashMap.put("R4",response.body().getList().get(i).get("R4"));
+                                hashMap.put("R5",response.body().getList().get(i).get("R5"));
                                 peopleListArray.add(hashMap);
                             }
                             mAdapter.setArrayList(peopleListArray);
