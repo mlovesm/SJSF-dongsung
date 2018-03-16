@@ -331,7 +331,7 @@ public class PersonnelFragment extends Fragment {
     private class ListViewItemClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            alertDialog(peopleListArray.get(position).get("user_cell").toString());
+            alertDialog(peopleListArray.get(position).get("R3").toString());
 
         }
     }

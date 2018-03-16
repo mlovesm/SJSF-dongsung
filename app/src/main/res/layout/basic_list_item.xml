@@ -63,7 +63,6 @@
                 android:gravity="center|right"
                 android:maxLines="1"
                 android:maxWidth="150dp"
-                android:text="2017-02-20 16:00:0.0"
                 android:textColor="@color/font_333"
                 android:textSize="14sp" />
         </RelativeLayout>

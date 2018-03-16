@@ -96,7 +96,7 @@ public class NoticeBoardFragment extends Fragment {
                             arrayList.add(hashMap);
                         }
 
-                        mAdapter = new BoardAdapter(getActivity(), arrayList, "Board");
+                        mAdapter = new BoardAdapter(getActivity(), arrayList, "NoticeBoard");
                         listView.setAdapter(mAdapter);
                     } catch ( Exception e ) {
                         e.printStackTrace();
